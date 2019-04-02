@@ -42,7 +42,7 @@
   "devDependencies": {
     "eslint": "^4.19.1",
     "eslint-plugin-react": "^7.11.1",
-    "gh-pages": "^1.2.0",
+    "gh-pages": "^2.0.1",
     "prettier": "^1.14.2"
   },
   "homepage": "https://codycrunch.com",
@@ -56,7 +56,8 @@
     "build": "rm -rf public && rm -rf .cache && gatsby build",
     "now-build": "gatsby build",
     "deploy": "yarn build && cp now.json public/ && cd public && now alias $(now) codycrunch.com",
-    "dry": "yarn build && cp now.json public/ && cd public && now"
+    "dry": "yarn build && cp now.json public/ && cd public && now",
+    "deploy:github": "npm run build && node ./deploy/deploy-github"
   },
   "husky": {
     "hooks": {
